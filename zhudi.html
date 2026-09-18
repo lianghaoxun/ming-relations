@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>朱棣一家：靖难、传位与"仁宗"之仁 · 大明人物关系图</title>
+<style>
+:root{--red:#C0392B;--red-l:#E8665A;--gold:#D9A441;--ink:#2F3640;
+--paper:#FFF8EE;--card:#fff;--line:#E5DACB;--green:#3E8E5A;--blue:#3A6EA5}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+background:var(--paper);color:var(--ink);line-height:1.78;font-size:16px;padding-bottom:60px}
+img{max-width:100%;display:block}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(160deg,#6E1F16 0%,#C0392B 55%,#8E2B21 100%);
+color:#FFF6E5;padding:38px 20px 32px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;
+background:radial-gradient(circle at 50% 120%,rgba(255,220,150,.3),transparent 60%)}
+.hd-in{position:relative;z-index:2}
+header .tag{display:inline-block;background:rgba(255,255,255,.16);
+border:1px solid rgba(255,235,190,.5);padding:3px 14px;border-radius:20px;font-size:13px;margin-bottom:12px}
+header h1{font-size:26px;line-height:1.4;font-weight:800;letter-spacing:1px}
+header h1 em{font-style:normal;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25)}
+header .sub{margin-top:10px;font-size:14.5px;opacity:.94}
+header .quote{margin:16px auto 0;max-width:640px;background:rgba(0,0,0,.16);
+border-left:4px solid var(--gold);padding:11px 15px;border-radius:0 8px 8px 0;font-size:15px;text-align:left}
+nav.topnav{position:relative;z-index:2;margin-top:16px}
+nav.topnav a{color:#FFF6E5;text-decoration:none;font-size:13.5px;opacity:.92;border-bottom:1px dashed rgba(255,246,229,.5);padding-bottom:1px}
+nav.topnav a+a{margin-left:14px}
+section{margin-top:30px}
+.h2{font-size:21px;font-weight:800;display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.h2 .n{background:var(--red);color:#fff;width:30px;height:30px;border-radius:9px;
+display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none;
+box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.h2sub{font-size:13px;color:#8A7A66;margin:0 0 14px 39px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+box-shadow:0 3px 12px rgba(120,90,60,.07);margin-bottom:14px}
+p{margin-bottom:10px}p:last-child{margin-bottom:0}
+.hl{background:linear-gradient(transparent 62%,#FFD98A 62%);font-weight:700}
+.tip{background:#FFF3D6;border:1px dashed #D9A441;border-radius:10px;padding:11px 13px;font-size:14px;margin-top:12px}
+.tip b{color:#9A5B12}
+.bq{background:#FBEEEA;border-left:5px solid var(--red);padding:12px 14px;
+border-radius:0 10px 10px 0;font-size:15.5px;margin:12px 0}
+.bq .who{display:block;font-size:12.5px;color:#9A6A62;margin-top:6px}
+
+/* 家系图 */
+.tree{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;
+overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 3px 12px rgba(120,90,60,.07)}
+.tree svg{display:block;width:100%;height:auto;min-width:640px}
+
+/* 时间线 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;
+background:linear-gradient(var(--gold),var(--red))}
+.tli{position:relative;margin-bottom:16px;background:#fff;border:1px solid var(--line);
+border-radius:12px;padding:12px 14px}
+.tli::before{content:"";position:absolute;left:-22px;top:16px;width:15px;height:15px;border-radius:50%;
+background:var(--red);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.tli .y{font-weight:800;color:var(--red);font-size:14px;margin-bottom:2px}
+.tli .d{font-size:14.5px}
+
+/* 人物卡网格 */
+.pnodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}
+.pn{border-radius:11px;padding:9px 7px;text-align:center;cursor:pointer;border:1.5px solid;
+transition:.15s;background:#fff}
+.pn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.pn.on{outline:3px solid var(--red);outline-offset:1px}
+.pn .n1{font-size:14px;font-weight:800;line-height:1.3}
+.pn .n2{font-size:10.5px;color:#7A6A58;margin-top:4px;line-height:1.4}
+.panel{margin-top:11px;background:#FFFDF7;border:1px solid var(--line);
+border-left:5px solid var(--gold);border-radius:10px;padding:13px;min-height:90px}
+.panel h4{font-size:16px;color:var(--red);margin-bottom:2px}
+.panel .role{font-size:12.5px;color:#8A7A66;margin-bottom:7px}
+.panel p{font-size:14.5px;margin-bottom:0}
+
+/* 对比表 */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp .side{border-radius:14px;padding:14px;border:1.5px solid}
+.cmp .side h3{font-size:17px;font-weight:800;margin-bottom:8px;text-align:center}
+.cmp .side ul{list-style:none;font-size:13.5px}
+.cmp .side li{padding:5px 0 5px 22px;position:relative}
+.cmp .side li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:3px;border-radius:2px}
+.cmp .zhu{background:#FBF1F0;border-color:#E0A79D}
+.cmp .zhu h3{color:var(--red)}
+.cmp .zhu li::before{background:var(--red)}
+.cmp .ren{background:#EDF7F0;border-color:#9BCBA6}
+.cmp .ren h3{color:var(--green)}
+.cmp .ren li::before{background:var(--green)}
+@media(max-width:560px){.cmp{grid-template-columns:1fr}}
+
+/* 问答 */
+.q{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.q .qt{font-weight:700;font-size:15.5px;margin-bottom:9px}
+.as{display:grid;gap:7px}
+.a{border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14.5px;
+cursor:pointer;background:#fff;font-family:inherit;text-align:left;width:100%}
+.a.ok{background:#EDF7F0;border-color:var(--green);color:#2C6B41}
+.a.no{background:#FDF3F1;border-color:#E8837A;color:#A5362B}
+.a.dis{pointer-events:none;opacity:.75}
+.exp{display:none;margin-top:9px;font-size:14px;background:#FFF8E6;border-radius:8px;padding:9px 11px}
+.exp.show{display:block}
+
+footer{text-align:center;font-size:12.5px;color:#A09381;margin-top:26px}
+footer a{color:#8A7A66;text-decoration:none}
+@media(max-width:560px){header h1{font-size:22px}.pnodes{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd-in">
+    <div class="tag">专题 · 1392 — 1425</div>
+    <h1>朱棣一家：<em>靖难、传位与"仁宗"之仁</em></h1>
+    <div class="sub">一家人造反 · 两次叔侄争锋 · 太子之争 · 十个月的仁德</div>
+    <div class="quote">朱元璋把皇位传给了孙子，却给最能打的儿子留下了兵。叔叔造了侄子的反，夺了江山；可这个最像父亲的狠人，最后却把皇位传给了最不像自己的胖儿子。十年后，又一个叔叔造侄子的反，这一次，侄子没有再心软。</div>
+    <nav class="topnav">
+      <a href="./index.html">← 返回首页</a>
+      <a href="./full-map.html">全图</a>
+      <a href="./visual-map.html">关系图</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 1. 家系图 -->
+<section>
+<div class="h2"><span class="n">1</span>先看这家人：一条血脉，两场夺位</div>
+<div class="h2sub">朱元璋 → 朱棣 → 朱高炽，中间夹着一个失踪的侄子</div>
+<div class="tree">
+<svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#D9A441"/></marker>
+</defs>
+<!-- 朱元璋 -->
+<rect x="320" y="20" width="160" height="62" rx="12" fill="#FFF6E6" stroke="#D9A441" stroke-width="2.5"/>
+<text x="400" y="46" font-size="15" font-weight="800" fill="#2F3640" text-anchor="middle">朱元璋</text>
+<text x="400" y="66" font-size="11" fill="#8A7A66" text-anchor="middle">明太祖 · 开国皇帝</text>
+<!-- 朱标 嫡长子 -->
+<rect x="100" y="130" width="150" height="56" rx="11" fill="#FFF6E6" stroke="#E0C9A6" stroke-width="1.8"/>
+<text x="175" y="154" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱标</text>
+<text x="175" y="172" font-size="10.5" fill="#8A7A66" text-anchor="middle">太子 · 早逝（37岁）</text>
+<!-- 朱棣 四子 -->
+<rect x="550" y="130" width="150" height="56" rx="11" fill="#FFF6E6" stroke="#D9A441" stroke-width="2.5"/>
+<text x="625" y="154" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱棣</text>
+<text x="625" y="172" font-size="10.5" fill="#8A7A66" text-anchor="middle">燕王 → 永乐帝</text>
+<!-- 连线 朱元璋->朱标 / 朱棣 -->
+<line x1="360" y1="82" x2="200" y2="130" stroke="#D9A441" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="440" y1="82" x2="600" y2="130" stroke="#D9A441" stroke-width="2" marker-end="url(#arr)"/>
+<!-- 朱允炆 朱标子 -->
+<rect x="40" y="250" width="150" height="56" rx="11" fill="#FFF6E6" stroke="#E0C9A6" stroke-width="1.8"/>
+<text x="115" y="274" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱允炆</text>
+<text x="115" y="292" font-size="10.5" fill="#8A7A66" text-anchor="middle">建文帝 · 失踪</text>
+<line x1="175" y1="186" x2="145" y2="250" stroke="#E0C9A6" stroke-width="1.8" marker-end="url(#arr)"/>
+<text x="70" y="225" font-size="11" fill="#8A7A66" text-anchor="middle">传孙</text>
+<!-- 朱高炽 朱高煦 朱高燧 -->
+<rect x="300" y="250" width="140" height="56" rx="11" fill="#FFF6E6" stroke="#D9A441" stroke-width="2.5"/>
+<text x="370" y="274" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱高炽</text>
+<text x="370" y="292" font-size="10.5" fill="#8A7A66" text-anchor="middle">太子 → 洪熙·仁宗</text>
+<rect x="470" y="250" width="140" height="56" rx="11" fill="#FFF6E6" stroke="#E0C9A6" stroke-width="1.8"/>
+<text x="540" y="274" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱高煦</text>
+<text x="540" y="292" font-size="10.5" fill="#8A7A66" text-anchor="middle">汉王 · 造反被诛</text>
+<rect x="640" y="250" width="140" height="56" rx="11" fill="#FFF6E6" stroke="#E0C9A6" stroke-width="1.8"/>
+<text x="710" y="274" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱高燧</text>
+<text x="710" y="292" font-size="10.5" fill="#8A7A66" text-anchor="middle">赵王 · 党附汉王</text>
+<line x1="625" y1="186" x2="390" y2="250" stroke="#D9A441" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="625" y1="186" x2="540" y2="250" stroke="#E0C9A6" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="625" y1="186" x2="690" y2="250" stroke="#E0C9A6" stroke-width="1.8" marker-end="url(#arr)"/>
+<!-- 靖难大箭头 朱允炆 -> 朱棣 -->
+<path d="M190 278 Q400 360 550 278" fill="none" stroke="#C0392B" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arr)"/>
+<text x="370" y="348" font-size="13" font-weight="800" fill="#C0392B" text-anchor="middle">靖难之役 · 叔叔夺侄子位</text>
+<!-- 朱瞻基 -->
+<rect x="300" y="380" width="140" height="56" rx="11" fill="#FFF6E6" stroke="#D9A441" stroke-width="2.5"/>
+<text x="370" y="404" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱瞻基</text>
+<text x="370" y="422" font-size="10.5" fill="#8A7A66" text-anchor="middle">宣德帝 · 好圣孙</text>
+<line x1="370" y1="306" x2="370" y2="380" stroke="#D9A441" stroke-width="2" marker-end="url(#arr)"/>
+<!-- 朱高煦反朱瞻基 -->
+<path d="M540 306 C540 360 460 360 440 380" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+<text x="560" y="360" font-size="11" font-weight="800" fill="#C0392B">造反</text>
+</svg>
+</div>
+<div class="tip"><b>怎么看这张图：</b>实线箭头 = 正常传位；虚线红箭头 = 打仗夺位。朱元璋把皇位<b>跳过儿子</b>直接给了孙子朱允炆，这是后面一切的起点。</div>
+</section>
+
+<!-- 2. 传孙不传子 -->
+<section>
+<div class="h2"><span class="n">2</span>朱元璋为什么把皇位给了孙子？</div>
+<div class="h2sub">一场早死，埋下了叔侄相杀的种子</div>
+<div class="card">
+<p>朱元璋最中意的继承人是长子<b class="hl">朱标</b>。朱标性格宽厚，跟朱元璋的狠辣刚好互补，被当作"守成之君"培养了二十多年。满朝文武、各路藩王都服他。</p>
+<p>偏偏 <b>1392 年</b>，朱标 37 岁病死了。朱元璋白发人送黑发人，悲痛之余必须重新选接班人。</p>
+<p>按规矩，嫡长子死了，该立嫡长孙。于是朱标的儿子、当时才 <b>15 岁的朱允炆</b>被立为皇太孙。朱元璋的其他儿子（包括燕王朱棣）心里都不是滋味，但父皇在，没人敢吭声。</p>
+</div>
+<div class="bq">
+"立嫡以长不以贤，立子以贵不以长。" —— 这是朱元璋自己定的《皇明祖训》里的规矩，他亲手封了二十多个儿子当藩王，本意是<b>屏藩皇室</b>，没想到先反的就是自己儿子。
+<span class="who">—— 朱元璋的制度设计，反噬了孙子</span>
+</div>
+</section>
+
+<!-- 3. 叔侄争锋 -->
+<section>
+<div class="h2"><span class="n">3</span>叔侄争锋：一个要削藩，一个要清君侧</div>
+<div class="h2sub">朱允炆和朱棣，从一开始就不在一个段位</div>
+<div class="cmp">
+  <div class="side zhu">
+    <h3>侄子 朱允炆（建文帝）</h3>
+    <ul>
+      <li>21 岁登基，从小读儒家经典长大</li>
+      <li>信任齐泰、黄子澄、方孝孺等文臣</li>
+      <li>一上台就<b>削藩</b>：一年内废了 5 个叔叔</li>
+      <li>下令"勿使朕有杀叔之名"——绑住了前线手脚</li>
+      <li>用人失误：派李景隆这个"草包"率五十万大军</li>
+    </ul>
+  </div>
+  <div class="side ren">
+    <h3>叔叔 朱棣（燕王）</h3>
+    <ul>
+      <li>就藩北平多年，常年跟蒙古打仗</li>
+      <li>手下有精锐骑兵，实战经验丰富</li>
+      <li>谋士姚广孝（道衍和尚）出谋划策</li>
+      <li>以"<b>清君侧、诛齐黄</b>"为名起兵，号"靖难"</li>
+      <li>亲自冲锋，多次险死还生，心理素质极强</li>
+    </ul>
+  </div>
+</div>
+<div class="tip"><b>关键差距：</b>朱允炆是"好学生"型皇帝，讲仁义、重规矩；朱棣是"老兵"型，懂人性、懂战场。两人一旦翻脸，侄子的"仁"反而成了软肋。</div>
+</section>
+
+<!-- 4. 靖难时间线 -->
+<section>
+<div class="h2"><span class="n">4</span>一家人造反：靖难之役三年时间线</div>
+<div class="h2sub">从 1399 年起兵到 1402 年攻入南京</div>
+<div class="tl">
+  <div class="tli"><div class="y">1399 年 7 月 · 北平</div>
+  <div class="d">朱棣以"清君侧"为名在北平起兵，<b>靖难之役</b>爆发。先控制北平，再攻下居庸关、怀来，稳住后方。</div></div>
+  <div class="tli"><div class="y">1399 年 8—10 月 · 真定之战</div>
+  <div class="d">建文帝派老将耿炳文率 13 万北伐，被朱棣击败。随后换李景隆率 50 万大军围攻北平，被朱棣反杀。</div></div>
+  <div class="tli"><div class="y">1400 年 · 白沟河、济南</div>
+  <div class="d">白沟河之战，朱棣险些被擒，却因一阵大风刮断李景隆帅旗反败为胜。围攻济南时被铁铉死守三月不下，被迫退兵。</div></div>
+  <div class="tli"><div class="y">1401 年 · 拉锯</div>
+  <div class="d">双方在河北、山东反复拉锯。朱棣虽屡胜，却攻不下济南、保定，地盘始终只有北平一带。<b>僵局</b>。</div></div>
+  <div class="tli"><div class="y">1402 年初 · 关键转折</div>
+  <div class="d">朱棣得到南京内应密报：京城空虚。他决定<b>绕过济南，直扑南京</b>。这是整场战争最冒险也最正确的一步。</div></div>
+  <div class="tli"><div class="y">1402 年 6 月 · 南京陷落</div>
+  <div class="d">朱棣大军渡过长江，李景隆开门投降。南京皇宫起火，建文帝<b>下落不明</b>（一说自焚，一说出逃）。朱棣登基，年号永乐。</div></div>
+</div>
+<div class="bq">
+"不要让我背上杀叔的名声。" —— 朱允炆给前线的这道旨意，等于给朱棣穿了件防弹衣。朱棣几次兵败被围，南军就是不敢下死手。
+<span class="who">—— 建文帝的"仁"，亲手把江山送给了叔叔</span>
+</div>
+</section>
+
+<!-- 5. 人物卡 -->
+<section>
+<div class="h2"><span class="n">5</span>这一家人，挨个认识</div>
+<div class="h2sub">点人物卡片，看他们的故事</div>
+<div class="pnodes">
+<div class="pn" style="background:#FFF6E6;border-color:#E0C9A6" data-n="朱元璋" data-r="明太祖 · 开国皇帝" data-d="出身布衣，1368年建立明朝。立长子朱标为太子。朱标死后，立长孙朱允炆为皇太孙，又封二十四个儿子为藩王，本意屏藩皇室，结果给孙子留下一群手握重兵的叔叔。"><div class="n1">朱元璋</div><div class="n2">明太祖</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#E0C9A6" data-n="朱标" data-r="太子 · 懿文太子" data-d="朱元璋嫡长子，性情仁厚，被悉心培养二十多年。1392年病死，年仅37岁。他的死打破了接班顺序，直接导致后来的靖难之役。"><div class="n1">朱标</div><div class="n2">太子（早逝）</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#E0C9A6" data-n="朱允炆" data-r="建文帝 · 失踪" data-d="朱标次子，1398年继位。推行削藩，引发靖难。1402年南京城破后下落不明，成为明史第一悬案。他的'仁厚'在权力斗争中成了致命弱点。"><div class="n1">朱允炆</div><div class="n2">建文帝</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#D9A441" data-n="朱棣" data-r="永乐帝 · 明成祖" data-d="朱元璋第四子，封燕王，镇守北平。1399年起兵靖难，1402年夺位登基。迁都北京、郑和下西洋、修《永乐大典》、五征漠北。功绩大，手段也狠，对待建文旧臣极其残酷（诛方孝孺十族）。"><div class="n1">朱棣</div><div class="n2">永乐帝</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#D9A441" data-n="朱高炽" data-r="洪熙帝 · 明仁宗" data-d="朱棣长子，肥胖体弱，性格仁厚。靖难时守北平立过大功。做了20年太子，登基仅10个月就病死，却用这10个月把父亲的猛政拨回宽仁，获谥'仁宗'。"><div class="n1">朱高炽</div><div class="n2">洪熙·仁宗</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#E0C9A6" data-n="朱高煦" data-r="汉王 · 争位失败" data-d="朱棣次子，勇猛善战，靖难中多次救父于阵前。朱棣曾暗示'勉之，世子多疾'，让他以为自己能接班。朱高炽即位后他谋反，被侄子朱瞻基平定，死于铜缸炙杀。"><div class="n1">朱高煦</div><div class="n2">汉王</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#D9A441" data-n="朱瞻基" data-r="宣德帝 · 明宣宗" data-d="朱高炽长子，自幼聪慧，朱棣的'好圣孙'。平定汉王朱高煦叛乱，从安南撤兵，与父亲共同开创'仁宣之治'，是明朝少有的守成明君。"><div class="n1">朱瞻基</div><div class="n2">宣德帝</div></div>
+<div class="pn" style="background:#FFF6E6;border-color:#E0C9A6" data-n="朱高燧" data-r="赵王 · 朱棣第三子" data-d="朱棣第三子，与二哥朱高煦关系密切，多次联合陷害太子朱高炽。永乐二十一年曾试图趁朱棣病重发动政变未遂。朱高煦造反时他知情未举报，后被侄子朱瞻基宽大处理，主动交出护卫，得以善终。"><div class="n1">朱高燧</div><div class="n2">赵王</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="杨荣" data-r="内阁大学士 · 秘不发丧" data-d="朱棣最信任的文臣之一，随征漠北。1424年朱棣死于榆木川时，他与金幼孜决定秘不发丧，用锡筒密封遗体，自己密报太子朱高炽，成功防止了军中的朱高煦夺位。是仁宣之治的核心文臣。"><div class="n1">杨荣</div><div class="n2">内阁大学士</div></div>
+<div class="pn" style="background:#FDEFE0;border-color:#E8A87C" data-n="姚广孝" data-r="靖难第一功臣 · 黑衣宰相" data-d="法名道衍，苏州和尚。是朱棣的首席谋士，靖难之役的总策划。朱棣登基后他坚持不还俗、不蓄发，白天穿朝服上朝，晚上回庙里穿僧衣，人称'黑衣宰相'。"><div class="n1">姚广孝</div><div class="n2">黑衣宰相</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="方孝孺" data-r="建文忠臣 · 被诛十族" data-d="建文帝的老师，天下读书人的楷模。南京城破后拒绝为朱棣写登基诏书，说'死即死耳，诏不可草'。朱棣大怒，诛其十族（九族加学生），死者873人。"><div class="n1">方孝孺</div><div class="n2">建文忠臣</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="铁铉" data-r="济南守将 · 铁骨铮铮" data-d="建文年间山东参政，靖难时死守济南三个月，用朱元璋的神牌挂在城墙上逼朱棣不敢开炮。朱棣登基后将他凌迟处死，铁铉至死骂不绝口，被济南人尊为'铁公'。"><div class="n1">铁铉</div><div class="n2">济南守将</div></div>
+</div>
+<div class="panel" id="panel"><h4>👆 点上面任意一个人</h4><p>这里会显示：他是谁、在这家人的故事里扮演什么角色。</p></div>
+</section>
+
+<!-- 6. 传位难题 -->
+<section>
+<div class="h2"><span class="n">6</span>传位难题：万一真传给了老二呢？</div>
+<div class="h2sub">朱棣在朱高炽和朱高煦之间纠结了整整二十年</div>
+<div class="card">
+<p>朱棣夺位后，立太子成了大难题。两个候选人各有优势：</p>
+<p><b class="hl">朱高炽（长子）：</b>合法继承人，靖难时以一万兵力守住北平，立过大功；性格仁厚，文官集团拥护。但他<b>肥胖、体弱、走路都要人扶</b>，朱棣看着就嫌弃，觉得他不像自己。</p>
+<p><b class="hl">朱高煦（次子）：</b>靖难时随朱棣冲锋陷阵，多次救父于阵前——白沟河、东昌、南京渡江，全是硬仗。性格、长相都像朱棣。朱棣曾拍着他的肩膀说"<b>勉之，世子多疾</b>"——这几乎就是口头承诺了。</p>
+<p>武将集团（丘福等靖难功臣）一边倒地支持朱高煦；文官集团（解缙、黄淮、尹昌隆等）则坚持立嫡长子。朱棣犹豫了很久。</p>
+</div>
+
+<div class="card" style="background:#FFFDF7;border-left:5px solid var(--blue)">
+<h3 style="font-size:17px;color:var(--blue);margin-bottom:8px">🤔 假设：如果朱棣真传位给朱高煦，会怎样？</h3>
+<p>① <b>得国不正的问题会重演。</b>朱棣自己是靠"靖难"夺位的，如果他再废掉合法的长子立次子，等于亲手废掉"嫡长子继承制"，那么他自己夺位的合法性也会被质疑。文官集团绝不会答应。</p>
+<p>② <b>朱高煦本人不堪大用。</b>他打仗是把好手，但治国一窍不通，骄横跋扈、目无法度。他曾公开说"我英武，岂不类秦王李世民乎"——把自己比作李世民，暗示想搞"玄武门之变"。这话传到朱棣耳朵里，朱棣能不警觉？</p>
+<p>③ <b>没有"好圣孙"。</b>朱高煦的儿子们没有一个像朱瞻基那样出色。朱棣选继承人，看的不只是儿子，还有孙子。</p>
+<p>所以即使朱棣偏爱朱高煦，<b>制度、群臣、隔代接班人</b>三道关卡，都把他挡在了太子位之外。</p>
+</div>
+
+<div class="card">
+<p>最终让朱棣下定决心的，是三件事叠加：</p>
+<p>① <b>嫡长子继承制</b>不可轻易破——朱元璋定下的规矩，朱棣自己就是靠"祖训"起兵的，不能自打嘴巴。<br>
+② <b>文官集团</b>坚定支持朱高炽。解缙一句"<b>好圣孙</b>"（指朱高炽的儿子朱瞻基）直接命中朱棣软肋。<br>
+③ <b>永乐十一年（1413年），朱棣正式册立朱瞻基为皇太孙。</b>这一步等于把继承顺序写死了——太子之后是太孙，朱高煦再也没有机会。</p>
+</div>
+
+<div class="bq">
+"陛下有好圣孙。" —— 解缙只用了四个字，就让朱棣下定了传位朱高炽的决心。因为朱高炽有个聪明过人的儿子朱瞻基，朱棣非常喜欢这个孙子，认为他将来必是明君。
+<span class="who">—— 父以子贵，朱高炽靠儿子坐稳了太子位</span>
+</div>
+</section>
+
+<!-- 6.5 榆木川秘不发丧 -->
+<section>
+<div class="h2"><span class="n">7</span>榆木川：朱棣死在了军营，朱高煦就在身边</div>
+<div class="h2sub">一场秘不发丧，决定了大明的走向</div>
+<div class="card">
+<p>永乐二十二年（1424年），65 岁的朱棣第五次亲征漠北。这一次，他没能活着回到北京。</p>
+<p>七月十八日，朱棣在回程途中的<b class="hl">榆木川</b>（今内蒙古多伦附近）病逝。随行的太监马云紧急找来两位大学士——<b>杨荣</b>和<b>金幼孜</b>商议。</p>
+<p>他们面临一个致命问题：<b>汉王朱高煦，此刻就在这支大军里。</b></p>
+<p>如果消息走漏，朱高煦手握兵权，完全可以效仿父亲再来一次"靖难"。而太子朱高炽远在南京监国，鞭长莫及。</p>
+</div>
+<div class="tl">
+  <div class="tli"><div class="y">秘不发丧</div>
+  <div class="d">杨荣、金幼孜决定<b>封锁消息</b>。他们命人把军中所有锡器收集起来，熔成一个大圆筒，把朱棣的遗体密封在里面，再杀掉工匠灭口。每天照常给"皇帝"送饭、行礼，不让任何人察觉。</div></div>
+  <div class="tli"><div class="y">密报太子</div>
+  <div class="d">杨荣亲自骑快马，带着遗诏秘密赶往南京，向太子朱高炽报丧。朱高炽立刻派儿子朱瞻基出居庸关迎丧，同时火速控制京城兵权。</div></div>
+  <div class="tli"><div class="y">朱高煦失算</div>
+  <div class="d">等朱高煦在军中反应过来时，朱高炽已经在南京稳定了局势。他错失了夺位的最佳时机。八月，朱高炽正式登基，是为明仁宗。</div></div>
+</div>
+
+<div class="tip" style="background:#EEF4FB;border-color:#8FAFD4">
+<b>🎬 关于电视剧《大明风华》：</b>剧中把朱瞻基放在了朱棣北征的军营里，让他在祖父临终时在场。<b>这是艺术加工，不是史实。</b>真实历史中，1424 年最后这次北征，朱瞻基并<b>没有</b>随军——他在南京协助父亲朱高炽监国。朱棣身边的是朱高煦（这才是杨荣等人必须秘不发丧的原因）。电视剧这样改，是为了强化朱瞻基的主角戏份和祖孙情感线。
+</div>
+</section>
+
+<!-- 7. 第二场叔侄之争 -->
+<section>
+<div class="h2"><span class="n">8</span>又一场叔侄之争：朱高煦 vs 朱瞻基</div>
+<div class="h2sub">这一次，侄子没有再心慈手软</div>
+<div class="card">
+<p>朱高炽在位仅 10 个月就病逝了（1425 年 5 月）。太子朱瞻基当时在南京，必须赶回北京继位。</p>
+<p><b class="hl">朱高煦看到了机会。</b>他在乐安（今山东惠民），正好在南京到北京的必经之路上。他计划在半路设伏，截杀侄子。</p>
+<p>但朱瞻基提前得到消息，轻装简从，<b>绕小路疾驰北上</b>。等朱高煦的伏兵出动时，朱瞻基已经到了北京。截杀失败。</p>
+</div>
+<div class="cmp">
+  <div class="side zhu">
+    <h3>叔叔 朱高煦</h3>
+    <ul>
+      <li>认为侄子年轻可欺，准备效仿父亲"靖难"</li>
+      <li>1426 年 8 月在乐安起兵，私造兵器、拉拢军官</li>
+      <li>打出"清君侧"旗号，直指夏原吉等大臣</li>
+      <li>但他没有朱棣的军事才能和政治手腕</li>
+      <li>手下多是乌合之众，无人真正卖命</li>
+    </ul>
+  </div>
+  <div class="side ren">
+    <h3>侄子 朱瞻基（宣德帝）</h3>
+    <ul>
+      <li>26 岁登基，从小跟着朱棣见过大阵仗</li>
+      <li>果断决定<b>御驾亲征</b>，而不是派大将去</li>
+      <li>大军压境，同时派人劝降，心理战到位</li>
+      <li>乐安城被围不到一天，朱高煦就投降了</li>
+      <li>没有重蹈建文帝的覆辙——<b>不心软</b></li>
+    </ul>
+  </div>
+</div>
+<div class="card">
+<p><b class="hl">结局：</b>朱高煦投降后被废为庶人，囚禁在西安门内的"逍遥城"。几年后，朱瞻基去看他，朱高煦趁侄子不注意，<b>伸脚把朱瞻基绊倒了</b>。</p>
+<p>朱瞻基大怒，命人用一口三百斤的<b>铜缸</b>把朱高煦扣住。朱高煦力大，竟把缸顶了起来。朱瞻基又命人在缸上堆满木炭，点火……<b>朱高煦被活活烤死在铜缸里</b>。他的几个儿子也一并被杀。</p>
+<p>至此，持续了近三十年的朱高煦夺位之乱，以最惨烈的方式终结。</p>
+</div>
+<div class="bq">
+建文帝朱允炆对叔叔朱棣心软，结果丢了江山；宣德帝朱瞻基对叔叔朱高煦不手软，结果坐稳了皇位。<b>同样是叔侄，结局完全相反。</b>
+<span class="who">—— 权力面前，"仁"要用对地方</span>
+</div>
+</section>
+
+<!-- 8. 仁宗之仁 -->
+<section>
+<div class="h2"><span class="n">9</span>"仁德皇上"为什么配叫"仁宗"？</div>
+<div class="h2sub">朱高炽只在位 10 个月，凭什么谥号是"仁"？</div>
+<div class="card">
+<p>在中国古代，给皇帝的<b>谥号</b>是一生功过的总结。"<b>仁</b>"是顶级评价——<b>蓄义丰功曰仁，慈民爱物曰仁，克己复礼曰仁</b>。明朝两百多年，只有朱高炽一个人独享了"仁宗"这个谥号。</p>
+<p>他在位只有 <b class="hl">10 个月</b>（1424年8月—1425年5月），却干了这些事：</p>
+</div>
+<div class="tl">
+  <div class="tli"><div class="y">平反建文冤狱</div>
+  <div class="d">朱棣把建文旧臣打成"奸臣"，家属流放为奴。朱高炽一上台就下旨：<b>建文诸臣家属，在教坊司、锦衣卫、浣衣局者，悉赦为民</b>，还给田土。方孝孺案被牵连的流放者家属，都放回来了。</div></div>
+  <div class="tli"><div class="y">平反永乐冤狱</div>
+  <div class="d">把朱棣时期因直谏被下狱的大臣（如夏原吉、黄淮、杨溥等）从牢里放出来，官复原职。这些人后来都成了"仁宣之治"的骨干。</div></div>
+  <div class="tli"><div class="y">停郑和下西洋、停北征、停采办</div>
+  <div class="d">朱棣五征漠北、派郑和下西洋、迁都北京，耗费巨大，国库空虚、百姓困苦。朱高炽一上台就<b>叫停这些烧钱工程</b>，还减免山东、河南等地的赋税，开仓赈灾。</div></div>
+  <div class="tli"><div class="y">从善如流，虚心纳谏</div>
+  <div class="d">鼓励大臣直言，哪怕话说得难听也不怪罪。他曾对杨士奇说："朕有过，群臣往往不能尽言，卿等能言之，朕甚喜。"</div></div>
+</div>
+<div class="cmp">
+  <div class="side zhu">
+    <h3>父亲 朱棣（永乐）</h3>
+    <ul>
+      <li>五征漠北、迁都、下西洋——<b>大手笔、大耗费</b></li>
+      <li>诛方孝孺十族、铁铉凌迟——<b>铁血</b></li>
+      <li>设东厂、重用宦官——<b>高压统治</b></li>
+      <li>百姓赋役繁重，国库消耗极大</li>
+      <li>风格：<b>雄才大略 + 刚猛</b></li>
+    </ul>
+  </div>
+  <div class="side ren">
+    <h3>儿子 朱高炽（洪熙）</h3>
+    <ul>
+      <li>停战争、停下西洋、减赋税——<b>休养生息</b></li>
+      <li>平反建文、永乐两朝冤狱——<b>宽仁</b></li>
+      <li>释放被囚大臣、虚心纳谏——<b>开明</b></li>
+      <li>减免山东河南赋税、开仓赈灾</li>
+      <li>风格：<b>仁慈宽厚 + 守成</b></li>
+    </ul>
+  </div>
+</div>
+<div class="tip"><b>一句话总结：</b>朱棣用一生证明了"马上得天下"，朱高炽用十个月证明了"马上不能治天下"。父亲有多猛，儿子的"仁"就有多珍贵。<b>他不是没本事打仗，而是知道此时大明最不需要的就是打仗。</b>这才是"仁"的分量。</div>
+</section>
+
+<!-- 9. 小测验 -->
+<section>
+<div class="h2"><span class="n">10</span>来做几道题，看你看懂了没有</div>
+<div class="h2sub">点选答案，会自动判断对错</div>
+
+<div class="q">
+<div class="qt">1. 朱元璋为什么把皇位传给孙子朱允炆，而不是儿子朱棣？</div>
+<div class="as">
+<button class="a" data-c="0">因为朱棣不是亲生的</button>
+<button class="a" data-c="1">因为嫡长子朱标早逝，按"立嫡以长"的规矩立了嫡长孙</button>
+<button class="a" data-c="0">因为朱棣打仗不行</button>
+</div>
+<div class="exp">✅ 正解：嫡长子继承制。朱标死后，朱允炆作为嫡长孙继位。这是朱元璋自己定的规矩。</div>
+</div>
+
+<div class="q">
+<div class="qt">2. 靖难之役中，建文帝的哪道命令反而帮了朱棣？</div>
+<div class="as">
+<button class="a" data-c="0">让李景隆当主帅</button>
+<button class="a" data-c="0">削藩</button>
+<button class="a" data-c="1">"勿使朕有杀叔之名"——前线因此不敢对朱棣下死手</button>
+</div>
+<div class="exp">✅ 正解：这道"仁厚"的旨意等于给朱棣发了免死金牌。朱棣几次身陷险境，南军将领都不敢杀他。</div>
+</div>
+
+<div class="q">
+<div class="qt">3. 朱高炽在位只有 10 个月，为什么还能获谥"仁宗"？</div>
+<div class="as">
+<button class="a" data-c="0">因为他是朱棣的长子</button>
+<button class="a" data-c="1">因为他平反冤狱、减免赋税、停罢耗费民力的工程，扭转了永乐朝的高压政策</button>
+<button class="a" data-c="0">因为他儿子朱瞻基后来当了皇帝</button>
+</div>
+<div class="exp">✅ 正解："仁"不是看在位多久，而是看干了什么。朱高炽用十个月把大明从"刚猛"拉回"宽仁"，所以配得上"仁"字。</div>
+</div>
+
+<div class="q">
+<div class="qt">4. 解缙用哪四个字帮朱高炽稳住了太子位？</div>
+<div class="as">
+<button class="a" data-c="0">"嫡庶有别"</button>
+<button class="a" data-c="1">"好圣孙"</button>
+<button class="a" data-c="0">"立长不立贤"</button>
+</div>
+<div class="exp">✅ 正解："好圣孙"指朱高炽的儿子朱瞻基。朱棣很喜欢这个孙子，解缙一句话点醒他：传位给朱高炽，将来皇位才能到朱瞻基手里。</div>
+</div>
+
+<div class="q">
+<div class="qt">5. 朱棣死在榆木川时，杨荣等人为什么要"秘不发丧"？</div>
+<div class="as">
+<button class="a" data-c="0">怕蒙古军队追击</button>
+<button class="a" data-c="0">怕太子朱高炽提前登基</button>
+<button class="a" data-c="1">怕军中的汉王朱高煦趁机夺权</button>
+</div>
+<div class="exp">✅ 正解：朱高煦就在北征大军里，如果得知朱棣已死，很可能拥兵夺权。所以杨荣等人封锁消息、密报太子，让朱高炽先稳住局势。</div>
+</div>
+
+<div class="q">
+<div class="qt">6. 朱高煦最后是怎么死的？</div>
+<div class="as">
+<button class="a" data-c="0">战场战死</button>
+<button class="a" data-c="0">被朱瞻基赐毒酒</button>
+<button class="a" data-c="1">被铜缸扣住，活活烤死</button>
+</div>
+<div class="exp">✅ 正解：朱高煦投降后被囚禁，因伸脚绊倒朱瞻基，被侄子用三百斤铜缸扣住、堆炭点火烤死。这是明朝宗室最惨烈的结局之一。</div>
+</div>
+</section>
+
+<!-- 尾声 -->
+<section>
+<div class="card" style="background:linear-gradient(160deg,#2F3640,#3E4A57);color:#FFF6E5;border:none">
+<h3 style="font-size:19px;color:var(--gold);margin-bottom:8px">这一家人的故事，留给后人什么？</h3>
+<p style="font-size:14.5px;opacity:.95">朱元璋立规矩，却被规矩反噬；朱允炆讲仁义，却输给了兵戎；朱棣以武力夺位，创下永乐盛世，也留下累累血债；朱高炽用十个月的"仁"，替父亲赎了一部分罪；朱瞻基则用果断和铁腕，终结了叔叔的夺位梦。</p>
+<p style="font-size:14.5px;opacity:.95">历史有时候很奇妙：<b>打江山的人未必适合坐江山，坐江山的人未必需要好身手。</b>"仁"不是软弱，而是知道什么时候该停下；"仁"也不是无底线的心软——<b>对敌人手软，就是对自己残忍。</b>建文帝和宣德帝，一个因仁失国，一个以仁守国，区别全在这里。</p>
+</div>
+</section>
+
+<footer>
+  <a href="./index.html">← 返回首页</a> ｜ 大明人物关系图 · 朱棣一家专题
+</footer>
+
+</div>
+
+<script>
+// 人物卡点击
+document.querySelectorAll('.pn').forEach(el=>{
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.pn').forEach(x=>x.classList.remove('on'));
+    el.classList.add('on');
+    const n=el.dataset.n,r=el.dataset.r,d=el.dataset.d;
+    document.getElementById('panel').innerHTML=
+      '<h4>'+n+'</h4><div class="role">'+r+'</div><p>'+d+'</p>';
+  });
+});
+
+// 答题
+document.querySelectorAll('.q').forEach(q=>{
+  const btns=q.querySelectorAll('.a');
+  const exp=q.querySelector('.exp');
+  let done=false;
+  btns.forEach(b=>{
+    b.addEventListener('click',()=>{
+      if(done) return;
+      done=true;
+      const correct=b.dataset.c==='1';
+      b.classList.add(correct?'ok':'no');
+      btns.forEach(x=>{
+        if(x!==b){
+          x.classList.add('dis');
+          if(x.dataset.c==='1') x.classList.add('ok');
+        }
+      });
+      exp.classList.add('show');
+    });
+  });
+});
+</script>
+</body>
+</html>
