@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>土木堡之变：被俘的天子、瓦剌留学生与救时宰相 · 大明人物关系图</title>
+<style>
+:root{--red:#C0392B;--red-l:#E8665A;--gold:#D9A441;--ink:#2F3640;
+--paper:#FFF8EE;--card:#fff;--line:#E5DACB;--green:#3E8E5A;--blue:#3A6EA5}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+background:var(--paper);color:var(--ink);line-height:1.78;font-size:16px;padding-bottom:60px}
+img{max-width:100%;display:block}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(160deg,#2C3E50 0%,#3A6EA5 60%,#2A4A6B 100%);
+color:#F0F6FC;padding:38px 20px 32px;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;
+background:radial-gradient(circle at 50% 120%,rgba(217,164,65,.25),transparent 60%)}
+.hd-in{position:relative;z-index:2}
+header .tag{display:inline-block;background:rgba(255,255,255,.14);
+border:1px solid rgba(200,220,240,.5);padding:3px 14px;border-radius:20px;font-size:13px;margin-bottom:12px}
+header h1{font-size:26px;line-height:1.4;font-weight:800;letter-spacing:1px}
+header h1 em{font-style:normal;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25)}
+header .sub{margin-top:10px;font-size:14.5px;opacity:.94}
+header .quote{margin:16px auto 0;max-width:640px;background:rgba(0,0,0,.18);
+border-left:4px solid var(--gold);padding:11px 15px;border-radius:0 8px 8px 0;font-size:15px;text-align:left}
+nav.topnav{position:relative;z-index:2;margin-top:16px}
+nav.topnav a{color:#F0F6FC;text-decoration:none;font-size:13.5px;opacity:.92;border-bottom:1px dashed rgba(240,246,252,.5);padding-bottom:1px}
+nav.topnav a+a{margin-left:14px}
+section{margin-top:30px}
+.h2{font-size:21px;font-weight:800;display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.h2 .n{background:var(--blue);color:#fff;width:30px;height:30px;border-radius:9px;
+display:inline-flex;align-items:center;justify-content:center;font-size:15px;flex:none;
+box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.h2sub{font-size:13px;color:#8A7A66;margin:0 0 14px 39px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+box-shadow:0 3px 12px rgba(120,90,60,.07);margin-bottom:14px}
+p{margin-bottom:10px}p:last-child{margin-bottom:0}
+.hl{background:linear-gradient(transparent 62%,#FFD98A 62%);font-weight:700}
+.tip{background:#FFF3D6;border:1px dashed #D9A441;border-radius:10px;padding:11px 13px;font-size:14px;margin-top:12px}
+.tip b{color:#9A5B12}
+.bq{background:#FBEEEA;border-left:5px solid var(--red);padding:12px 14px;
+border-radius:0 10px 10px 0;font-size:15.5px;margin:12px 0}
+.bq .who{display:block;font-size:12.5px;color:#9A6A62;margin-top:6px}
+.bq.blue{background:#EEF4FB;border-left-color:var(--blue)}
+.bq.blue .who{color:#5B7290}
+
+/* 家系图 */
+.tree{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;
+overflow-x:auto;-webkit-overflow-scrolling:touch;box-shadow:0 3px 12px rgba(120,90,60,.07)}
+.tree svg{display:block;width:100%;height:auto;min-width:640px}
+
+/* 时间线 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;
+background:linear-gradient(var(--blue),var(--red))}
+.tli{position:relative;margin-bottom:16px;background:#fff;border:1px solid var(--line);
+border-radius:12px;padding:12px 14px}
+.tli::before{content:"";position:absolute;left:-22px;top:16px;width:15px;height:15px;border-radius:50%;
+background:var(--blue);border:3px solid #fff;box-shadow:0 0 0 2px var(--gold)}
+.tli .y{font-weight:800;color:var(--blue);font-size:14px;margin-bottom:2px}
+.tli .d{font-size:14.5px}
+.tli.warn::before{background:var(--red);box-shadow:0 0 0 2px var(--red-l)}
+.tli.warn .y{color:var(--red)}
+
+/* 人物卡网格 */
+.pnodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}
+.pn{border-radius:11px;padding:9px 7px;text-align:center;cursor:pointer;border:1.5px solid;
+transition:.15s;background:#fff}
+.pn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.pn.on{outline:3px solid var(--blue);outline-offset:1px}
+.pn .n1{font-size:14px;font-weight:800;line-height:1.3}
+.pn .n2{font-size:10.5px;color:#7A6A58;margin-top:4px;line-height:1.4}
+.panel{margin-top:11px;background:#FFFDF7;border:1px solid var(--line);
+border-left:5px solid var(--gold);border-radius:10px;padding:13px;min-height:90px}
+.panel h4{font-size:16px;color:var(--blue);margin-bottom:2px}
+.panel .role{font-size:12.5px;color:#8A7A66;margin-bottom:7px}
+.panel p{font-size:14.5px;margin-bottom:0}
+
+/* 对比表 */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmp .side{border-radius:14px;padding:14px;border:1.5px solid}
+.cmp .side h3{font-size:17px;font-weight:800;margin-bottom:8px;text-align:center}
+.cmp .side ul{list-style:none;font-size:13.5px}
+.cmp .side li{padding:5px 0 5px 22px;position:relative}
+.cmp .side li::before{content:"";position:absolute;left:0;top:11px;width:12px;height:3px;border-radius:2px}
+.cmp .zhu{background:#FBF1F0;border-color:#E0A79D}
+.cmp .zhu h3{color:var(--red)}
+.cmp .zhu li::before{background:var(--red)}
+.cmp .ren{background:#EDF7F0;border-color:#9BCBA6}
+.cmp .ren h3{color:var(--green)}
+.cmp .ren li::before{background:var(--green)}
+@media(max-width:560px){.cmp{grid-template-columns:1fr}}
+
+/* 问答 */
+.q{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.q .qt{font-weight:700;font-size:15.5px;margin-bottom:9px}
+.as{display:grid;gap:7px}
+.a{border:1.5px solid var(--line);border-radius:9px;padding:9px 12px;font-size:14.5px;
+cursor:pointer;background:#fff;font-family:inherit;text-align:left;width:100%}
+.a.ok{background:#EDF7F0;border-color:var(--green);color:#2C6B41}
+.a.no{background:#FDF3F1;border-color:#E8837A;color:#A5362B}
+.a.dis{pointer-events:none;opacity:.75}
+.exp{display:none;margin-top:9px;font-size:14px;background:#FFF8E6;border-radius:8px;padding:9px 11px}
+.exp.show{display:block}
+
+footer{text-align:center;font-size:12.5px;color:#A09381;margin-top:26px}
+footer a{color:#8A7A66;text-decoration:none}
+@media(max-width:560px){header h1{font-size:22px}.pnodes{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd-in">
+    <div class="tag">专题 · 1449 — 1457</div>
+    <h1>土木堡之变：<em>被俘的天子、瓦剌留学生与救时宰相</em></h1>
+    <div class="sub">皇帝想当战神 · 弟弟被逼上位 · 于谦力挽狂澜 · 夺门之变与"意欲"之狱</div>
+    <div class="quote">二十万大军，输给了两万骑兵；大明天子，成了草原上的"留学生"；国难当头，一个书生站了出来，打了场漂亮的城市保卫战，保住了王朝，最后却被自己人送上了刑场。历史给了他清白，也给了他一句"粉身碎骨浑不怕，要留清白在人间"。</div>
+    <nav class="topnav">
+      <a href="./index.html">← 返回首页</a>
+      <a href="./full-map.html">全图</a>
+      <a href="./visual-map.html">关系图</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- 1. 家系图 -->
+<section>
+<div class="h2"><span class="n">1</span>先看这家人：一对兄弟，一个皇位</div>
+<div class="h2sub">朱瞻基的两个儿子，一个被俘，一个被逼登基，最后哥哥又抢了回来</div>
+<div class="tree">
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#D9A441"/></marker>
+<marker id="arrR" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 Z" fill="#C0392B"/></marker>
+</defs>
+<!-- 朱瞻基 -->
+<rect x="330" y="20" width="140" height="58" rx="12" fill="#F0F6FC" stroke="#3A6EA5" stroke-width="2.5"/>
+<text x="400" y="44" font-size="15" font-weight="800" fill="#2F3640" text-anchor="middle">朱瞻基</text>
+<text x="400" y="63" font-size="11" fill="#5B7290" text-anchor="middle">宣德帝 · 仁宣之治</text>
+<!-- 朱祁镇 长子 -->
+<rect x="90" y="130" width="160" height="58" rx="11" fill="#FFF6E6" stroke="#D9A441" stroke-width="2.5"/>
+<text x="170" y="154" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱祁镇</text>
+<text x="170" y="172" font-size="10.5" fill="#8A7A66" text-anchor="middle">正统帝 · 两度登基</text>
+<!-- 朱祁钰 次子 -->
+<rect x="550" y="130" width="160" height="58" rx="11" fill="#F0F6FC" stroke="#3A6EA5" stroke-width="2.5"/>
+<text x="630" y="154" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱祁钰</text>
+<text x="630" y="172" font-size="10.5" fill="#5B7290" text-anchor="middle">景泰帝 · 被逼上位</text>
+<line x1="390" y1="78" x2="230" y2="130" stroke="#3A6EA5" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="410" y1="78" x2="570" y2="130" stroke="#3A6EA5" stroke-width="2" marker-end="url(#arr)"/>
+<!-- 朱见深 -->
+<rect x="60" y="250" width="160" height="58" rx="11" fill="#F0F6FC" stroke="#3A6EA5" stroke-width="2"/>
+<text x="140" y="274" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">朱见深</text>
+<text x="140" y="292" font-size="10.5" fill="#5B7290" text-anchor="middle">太子→成化帝 · 被废又复立</text>
+<!-- 朱见济 -->
+<rect x="550" y="250" width="160" height="58" rx="11" fill="#FAFAFA" stroke="#C9C2B8" stroke-width="1.5"/>
+<text x="630" y="274" font-size="14" font-weight="800" fill="#8A7A66" text-anchor="middle">朱见济</text>
+<text x="630" y="292" font-size="10.5" fill="#A09381" text-anchor="middle">太子 · 早夭（5岁）</text>
+<line x1="170" y1="188" x2="155" y2="250" stroke="#3A6EA5" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="630" y1="188" x2="630" y2="250" stroke="#C9C2B8" stroke-width="1.8" marker-end="url(#arr)"/>
+<!-- 土木堡 红虚线 朱祁镇 -->
+<path d="M255 160 Q430 200 300 380" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrR)"/>
+<text x="330" y="205" font-size="12.5" font-weight="800" fill="#C0392B" text-anchor="middle">1449 土木堡被俘</text>
+<!-- 夺门复辟 红虚线 朱祁镇 -->
+<path d="M105 200 Q40 320 120 380" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrR)"/>
+<text x="22" y="330" font-size="11.5" font-weight="800" fill="#C0392B">1457 夺门复辟</text>
+<!-- 于谦 -->
+<rect x="360" y="352" width="150" height="58" rx="11" fill="#FDF0E4" stroke="#D9A441" stroke-width="2.5"/>
+<text x="435" y="376" font-size="14" font-weight="800" fill="#2F3640" text-anchor="middle">于谦</text>
+<text x="435" y="394" font-size="10.5" fill="#9A5B12" text-anchor="middle">兵部尚书 · 北京保卫战</text>
+<line x1="440" y1="352" x2="610" y2="205" stroke="#D9A441" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="545" y="290" font-size="11" fill="#9A5B12" text-anchor="middle">拥立+保卫</text>
+</svg>
+</div>
+<div class="tip"><b>怎么看这张图：</b>蓝线 = 正常传位；红色虚线 = 权力被抢/被夺。哥哥朱祁镇被瓦剌抓走，弟弟朱祁钰被迫登基；等哥哥被放回来，又被关进南宫七年，最后靠一场政变抢回皇位。中间站着的于谦，是这段历史里最闪亮也最悲剧的名字。</div>
+</section>
+
+<!-- 2. 皇帝想当战神 -->
+<section>
+<div class="h2"><span class="n">2</span>一个想当战神的皇帝，和一个想当宰相的太监</div>
+<div class="h2sub">土木堡之变，不是打输的，是自己作死作输的</div>
+<div class="card">
+<p>宣德帝朱瞻基 36 岁就病逝了，<b class="hl">9 岁的朱祁镇</b>登基，年号正统。他的曾祖父是五征漠北的朱棣，祖父是"好圣孙"朱瞻基，朱祁镇从小听着祖辈的打仗故事长大，天天幻想自己也能当一回"战神"。</p>
+<p>可他身边有一个叫<b>王振</b>的太监。王振很会哄皇帝开心，把朱祁镇从小哄到大，皇帝叫他"先生"。朝堂上文武百官都要巴结他，叫他"翁父"。王振的权力膨胀到极致——他想干一件大事来证明自己：<b>怂恿皇帝亲征</b>。</p>
+</div>
+<div class="card">
+<p><b class="hl">导火索：</b>1449 年，北方的瓦剌（蒙古）在首领<b>也先</b>带领下强盛起来。瓦剌每年以"朝贡"的名义来明朝做生意，王振削减了赏赐，也先大怒，分四路大军南侵，大同告急。</p>
+<p>边关告急的战报传到北京，23 岁的朱祁镇热血上头：<b>御驾亲征！</b>王振在边上添油加醋，说陛下一定能像曾祖父一样横扫漠北。满朝文武跪在地上劝，朱祁镇不听。他留弟弟郕王朱祁钰守北京，自己带着大军浩浩荡荡出发了。</p>
+</div>
+<div class="tl">
+  <div class="tli"><div class="y">出征 · 仓促得像个笑话</div>
+  <div class="d">从决定到出发，只准备了<b>几天</b>。大军号称 50 万（实际二十万上下），粮草辎重严重不足，还赶上连日大雨，士兵怨声载道。这哪里是打仗，是赶集。</div></div>
+  <div class="tli"><div class="y">到了大同 · 王振怕了</div>
+  <div class="d">大军刚到大同，前线惨败的战报就来了。王振吓得腿软，立刻下令<b>班师回朝</b>。仗还没打，先跑。</div></div>
+  <div class="tli warn"><div class="y">回程 · 一步臭棋接一步</div>
+  <div class="d">王振想绕道蔚州（他老家），好"衣锦还乡"；走一半又怕大军踩坏他家的庄稼，改道宣府。来回折腾，白白耽误了几天。<b>也先的骑兵就在后面追。</b></div></div>
+  <div class="tli warn"><div class="y">土木堡 · 八月十五的屠杀</div>
+  <div class="d">大军退到土木堡（今河北怀来东），离怀来城只有二十里。王振却因为<b>自己的辎重车队没到</b>，下令就地扎营等车。土木堡地势高、没水，士兵渴得挖地三尺。也先把明军团团围住，假意议和，趁明军移营就水、阵型大乱时，两万骑兵突然杀出——<b>二十万大军土崩瓦解。</b></div></div>
+</div>
+<div class="card">
+<p>这场惨败里：英国公张辅等<b>五十多位文武官员战死</b>，骡马、衣甲、器械、辎重全被瓦剌缴获。朱祁镇本人被俘。王振呢？被愤怒的护卫将军樊忠一锤打死（一说死于乱军）。"吾为天下诛此贼！"——这句演义里的话，说出了天下人的心声。</p>
+</div>
+<div class="bq">
+土木堡之变，是明朝由盛转衰的转折点。不是因为敌人太强，而是因为<b>外行指挥内行、把战争当旅游</b>。它给后世留下最惨痛的教训：让一个太监和一个小白皇帝决定二十万人的命运。
+<span class="who">—— 明朝最强的精锐，输给了自己的傲慢</span>
+</div>
+</section>
+
+<!-- 3. 被逼上位的弟弟 -->
+<section>
+<div class="h2"><span class="n">3</span>被逼上位的弟弟：这皇帝，没人想当</div>
+<div class="h2sub">朱祁钰是被于谦和满朝文武"架"上皇位的</div>
+<div class="card">
+<p>皇帝被俘的消息传回北京，朝堂炸了锅。皇后、太后哭成一团，大臣们手足无措。更可怕的是，也先挟持着朱祁镇一路叫门——<b>把"你们皇帝"押到城下，逼守将开城。</b></p>
+<p>大同守将郭登不开门，说："<b>社稷为重，君为轻。</b>"守城的道理是：城门一开，城就没了，城没了，国家就没了。这个道理，后来成了于谦最硬的一张底牌。</p>
+<p>瓦剌步步紧逼，北京城里却群龙无首。太子朱见深才 2 岁，谁拍板？就在这时，一个叫徐珵（后来改名徐有贞）的官员跳出来提议：<b>南迁，把都城搬回南京去！</b></p>
+</div>
+<div class="bq">
+"言南迁者，可斩也。" —— 于谦一声怒喝，喝住了满朝南逃的念头。北京是天下的根本，一旦动摇，国运就完了。<b>南宋的教训，就在眼前。</b>
+<span class="who">—— 于谦：北京保卫战，从这句话开始</span>
+</div>
+<div class="card">
+<p>于谦认为，要守住北京，必须先解决一件事：<b>国不可一日无君。</b>皇帝被俘，太子年幼，再拖下去，瓦剌随时可以拿"太上皇"当筹码要挟。他力主：立郕王朱祁钰为帝！</p>
+<p>朱祁钰吓得连连摆手：<b>我不当！</b>他当然不敢当——哥哥还没死呢，这皇帝当上，将来怎么交代？于谦和百官跪在殿外，孙太后点头，最后是<b>于谦一把按住朱祁钰的手</b>（史载"掖之使受"），半推半就，把他送上了皇位。</p>
+<p>1449 年 9 月，朱祁钰登基，改元<b>景泰</b>，遥尊哥哥朱祁镇为太上皇。这一年，他 21 岁，接手的是一个皇帝被俘、大军全灭、强敌压境的烂摊子。</p>
+</div>
+<div class="tip"><b>注意：</b>朱祁钰不是自己想当皇帝，是被<b>于谦</b>推上去的。这一推，既是救国的无奈之举，也埋下了兄弟反目、最后被哥哥清算的祸根。</div>
+</section>
+
+<!-- 4. 于谦的高光 -->
+<section>
+<div class="h2"><span class="n">4</span>于谦的高光：北京保卫战</div>
+<div class="h2sub">一个没带过兵的书生，守住了大明的首都</div>
+<div class="card">
+<p>朱祁钰登基，也先的如意算盘落空了——"手里的人质不值钱了"。恼羞成怒的也先在 1449 年 10 月，挟持朱祁镇，大军直扑北京。<b>于谦临危受命，任兵部尚书，全权指挥北京防务。</b></p>
+<p>于谦是个文人，此前没打过仗。但他干了几件硬事：</p>
+<p>① 调集各地<b>勤王军 22 万</b>入京，列阵九门；<br>
+② 任命将领分守各门，自己<b>亲自督战德胜门</b>；<br>
+③ 下令"<b>临阵将不顾军先退者，斩其将；军不顾将先退者，后队斩前队</b>"——城门一关，背城死战，谁退砍谁。</p>
+</div>
+<div class="card">
+<p><b class="hl">德胜门之战：</b>也先主攻德胜门，于谦设下埋伏，诱敌深入。瓦剌骑兵冲进伏击圈，明军神铳、火器齐发，瓦剌大败，<b>也先的弟弟卯那孩（孛罗）被炮打死</b>。这是瓦剌从没吃过的亏。</p>
+<p>也先转攻西直门、彰义门，全被挡回。相持五天后，也先听说各地勤王军正在赶来，怕被围歼，<b>连夜带着朱祁镇撤了。</b></p>
+<p>北京保卫战，<b>明朝赢了。</b>一个书生，用最朴素的办法——"不许跑、一起上、往死里打"——守住了国都。于谦一战封神，被天下人称为<b class="hl">"救时宰相"</b>。</p>
+</div>
+<div class="bq">
+"粉身碎骨浑不怕，要留清白在人间。" —— 这是于谦 12 岁写下的《石灰吟》。北京城下，他真做到了：一身清白，力挽狂澜，把大明从悬崖边上拉了回来。
+<span class="who">—— 于谦：明朝最干净的救火队员</span>
+</div>
+</section>
+
+<!-- 5. 瓦剌留学生回家 -->
+<section>
+<div class="h2"><span class="n">5</span>"瓦剌留学生"回家：太上皇的七年软禁</div>
+<div class="h2sub">网上调侃的"瓦剌留学生"，回来了，却被弟弟关了起来</div>
+<div class="card">
+<p>朱祁镇被俘一年，被网友戏称为"瓦剌留学生"——吃草原饭、住蒙古包，天天跟着也先的军队走。也先原想靠他换钱换地换城池，结果北京保卫战一败，这个"太上皇"成了<b>烫手山芋</b>：留着没用，杀了不划算，不如送回去换和平。</p>
+<p>但北京这边，朱祁钰一点也不想哥哥回来。哥哥一回来，自己这皇帝怎么当？朝中大臣也怕"一山二主"。就在这僵局里，一个叫<b>杨善</b>的官员站了出来。</p>
+</div>
+<div class="card">
+<p><b class="hl">杨善出使：</b>1450 年，杨善奉命出使瓦剌。他胆子极大——不带国书，空着手就去了。也先问他：你怎么空手来？杨善说：我专程来恭请太上皇回京，诚意在心里，不在礼物。</p>
+<p>也先问：你们皇帝回去，会不会反悔（报复）？杨善答：太上皇回去，必感瓦剌恩德。一番话说得也先心花怒放，当场放人。史书都说，杨善<b>"以口舌定国"</b>，没花一分钱，把皇帝接了回来。</p>
+<p>1450 年八月，朱祁镇回到北京。兄弟二人在东安门见面——朱祁钰迎接时，<b>把脸别开</b>。哥哥被安排住进<b class="hl">南宫</b>（今北京南池子一带），名义上是"太上皇"，实际上是被软禁。</p>
+</div>
+<div class="card">
+<p><b class="hl">南宫七年：</b>朱祁镇在南宫一住就是七年。朱祁钰怕他东山再起，把南宫的树全砍了（怕有人藏树后），门锁灌了铅，日常用度一减再减。朱祁镇和皇后钱氏<b>靠做针线活卖钱度日</b>。</p>
+<p>钱皇后当年在瓦剌就哭瞎了一只眼、瘸了一条腿，回到南宫又陪丈夫苦熬七年。这对落难夫妻的日子，和外面的皇位争斗，是两个世界。</p>
+</div>
+<div class="tip"><b>讽刺的是：</b>朱祁镇这个"太上皇"，前半生锦衣玉食，最惨的日子反而是被弟弟"照顾"的这七年。而当年拼命保他回来的于谦，四年后会死在他手里。</div>
+</section>
+
+<!-- 6. 弟弟的变化 -->
+<section>
+<div class="h2"><span class="n">6</span>弟弟的变化：从"被逼上位"到"想传儿子"</div>
+<div class="h2sub">权力会改变一个人，朱祁钰也没能例外</div>
+<div class="card">
+<p>景泰初年，朱祁钰是个勤勉的好皇帝。他信任于谦，整顿军备，把瓦剌打得服服帖帖。历史上对他的评价不差——<b>如果不是后来的私心，他本该是个守成之君。</b></p>
+<p>但有一件事，让他开始变了：<b>传位。</b></p>
+<p>皇位是哥哥的，太子是哥哥的儿子朱见深。朱祁钰想：我辛辛苦苦守天下，凭什么最后传给哥哥的儿子？1452 年，他废了侄子朱见深的太子位，改立自己的儿子<b>朱见济</b>为太子。朝中反对的官员，被他一顿收拾（杖责、下狱）。</p>
+<p>然而老天开了个残酷的玩笑：1453 年，<b>朱见济夭折了，年仅 5 岁。</b>朱祁钰就这么一个儿子。绝后的皇帝，偏偏不再立太子——他还在等，等一个永远不会来的继承人。</p>
+</div>
+<div class="bq">
+"武清侯石亨与宦官曹吉祥谋夺门……上皇自南宫入奉天殿登极，钟鼓齐鸣，群臣皆愕。" —— 历史没有给朱祁钰等待的时间。1457 年正月，他病重不能视朝，一场政变，正在南宫门外悄悄上演。
+<span class="who">—— 绝后 + 病重 = 机会来了</span>
+</div>
+</section>
+
+<!-- 7. 夺门之变 -->
+<section>
+<div class="h2"><span class="n">7</span>夺门之变：一夜之间，皇帝换人</div>
+<div class="h2sub">三个野心家，把囚徒重新抬上了龙椅</div>
+<div class="card">
+<p>1457 年正月，朱祁钰病重。三个各有算盘的人凑到了一起：</p>
+<p>① <b>石亨</b>——武将，北京保卫战的功臣，眼看朱祁钰要死、新君未定，怕自己失势；<br>
+② <b>徐有贞</b>——就是当年主张南迁的徐珵，改名后一直想往上爬，还怀恨于谦当年骂他；<br>
+③ <b>曹吉祥</b>——太监，王振的同类，想复制王振的"权倾朝野"。</p>
+<p>三人一拍即合：<b>迎太上皇复辟！</b>把朱祁镇从南宫抬出来，这功劳可就通天了。</p>
+</div>
+<div class="tl">
+  <div class="tli"><div class="y">正月十六夜 · 南宫</div>
+  <div class="d">石亨带兵撞开南宫宫墙（门锁被灌铅撬不动，直接拆墙），把还在睡觉的朱祁镇架上銮驾。朱祁镇又惊又喜，问：是你们？徐有贞答：请陛下复辟！</div></div>
+  <div class="tli warn"><div class="y">黎明 · 奉天殿</div>
+  <div class="d">一行人直奔奉天殿。守门武士见太上皇驾到，不敢拦。徐有贞命人敲响钟鼓，朱祁镇升座。文武百官上朝，一看龙椅上坐着的是"太上皇"，<b>全都傻了。</b></div></div>
+  <div class="tli"><div class="y">正月十七 · 天顺改元</div>
+  <div class="d">朱祁镇宣布复辟，改元天顺。当天第一道旨意：<b>逮捕于谦、王文等下狱。</b>朱祁钰被废为郕王，软禁西内。</div></div>
+</div>
+<div class="bq blue">
+"不杀于谦，此举为无名。" —— 徐有贞这句话，是于谦的催命符。意思是：夺门复辟要名正言顺，就必须证明景泰朝是"错"的；要证明景泰朝是错的，就得杀掉那个给景泰朝撑腰的人。<b>于谦不是死于谋反，是死于"合法性需要"。</b>
+<span class="who">—— 徐有贞：一句话，害死了救国的功臣</span>
+</div>
+</section>
+
+<!-- 8. 于谦之死 -->
+<section>
+<div class="h2"><span class="n">8</span>于谦之死："意欲"之狱与清白人间</div>
+<div class="h2sub">天下第一冤案：罪名是"想"，没有证据</div>
+<div class="card">
+<p>石亨、徐有贞给于谦安的罪名是：<b>谋立外藩</b>（想迎立襄王登基）。主审官审来审去，发现于谦根本没有行动，没有同党，没有书信，什么都没有。于是他们发明了一个千古奇冤的定罪逻辑——</p>
+<p>审问官质问于谦："你虽无行动，但<b>意欲</b>迎立外藩，这就是罪！"</p>
+<p>这句话后来成了笑话，也成了铁案：<b>因为"想"是没法证明的，所以谁也洗不清。</b>史称"<b class="hl">意欲之狱</b>"。</p>
+</div>
+<div class="card">
+<p>朱祁镇其实犹豫过："<b>于谦实有功。</b>"他也知道于谦救过江山。但徐有贞一句"不杀于谦，此举为无名"点醒了他——不杀于谦，自己复辟就不合法。皇位和自己的良心之间，朱祁镇选了皇位。</p>
+<p>1457 年正月二十二日，<b class="hl">于谦在北京崇文门外被斩。</b>行刑那天，天下大旱，百姓哭着说："天怒人怨。"抄家时，这位当朝一品大员家里<b>家无余财</b>，只有正屋里锁着的、皇帝赐的蟒袍和宝剑。</p>
+</div>
+<div class="bq">
+"千锤万凿出深山，烈火焚烧若等闲。粉身碎骨浑不怕，要留清白在人间。" —— 于谦 12 岁写的这首诗，像预言一样写完了自己的一生：被焚烧、被粉碎，但清白留在了人间。
+<span class="who">—— 石灰吟：明朝最好的"墓志铭"</span>
+</div>
+<div class="card">
+<p><b class="hl">后来呢？</b>朱祁镇死后，儿子朱见深（成化帝）继位。他深知于谦冤枉，立刻平反昭雪，恢复官爵，派人祭扫，追谥"<b>肃愍</b>"（后改"<b>忠肃</b>"）。杭州西湖边，至今有于谦祠，和岳飞墓遥遥相对——一个抗金，一个救国，都是"粉骨碎身"的英雄。</p>
+<p>至于朱祁钰：被废一个月后死于西内（一说被太监缢杀），死得不明不白。朱见深后来给他平反，恢复帝号，修了景泰陵。兄弟俩的恩怨，最后都化在了历史里。</p>
+</div>
+</section>
+
+<!-- 9. 人物卡 -->
+<section>
+<div class="h2"><span class="n">9</span>这一场大戏里的人物，挨个认识</div>
+<div class="h2sub">点人物卡片，看他们的故事</div>
+<div class="pnodes">
+<div class="pn" style="background:#FFF6E6;border-color:#D9A441" data-n="朱祁镇" data-r="明英宗 · 两度登基" data-d="宣德帝长子，9岁登基，年号正统。23岁受王振怂恿御驾亲征，土木堡之变被瓦剌俘虏一年，人称'瓦剌留学生'。放归后被弟弟软禁南宫七年，1457年靠夺门之变复辟，改元天顺。复位后冤杀于谦，是他一生最大的污点。"><div class="n1">朱祁镇</div><div class="n2">明英宗</div></div>
+<div class="pn" style="background:#F0F6FC;border-color:#3A6EA5" data-n="朱祁钰" data-r="景泰帝 · 被逼上位" data-d="朱祁镇之弟，封郕王。土木堡之变后被于谦等拥立为帝，年号景泰。任用于谦打赢北京保卫战，本是守成之君。后废侄子朱见深太子位、立自己的儿子朱见济，朱见济却早夭。夺门之变后被废为郕王，一个月后死（一说被缢杀）。"><div class="n1">朱祁钰</div><div class="n2">景泰帝</div></div>
+<div class="pn" style="background:#FDF0E4;border-color:#D9A441" data-n="于谦" data-r="兵部尚书 · 救时宰相" data-d="杭州人，进士出身。土木堡之变后怒斥南迁，拥立朱祁钰，指挥北京保卫战大败瓦剌，保全明朝。1457年夺门之变后被徐有贞等诬以'意欲'谋反，冤杀于崇文门外，家无余财。成化帝即位后平反，追谥忠肃。西湖于谦祠与岳飞墓相望。"><div class="n1">于谦</div><div class="n2">救时宰相</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="王振" data-r="太监 · 土木堡祸首" data-d="明英宗最宠信的太监，人称'翁父'。怂恿皇帝御驾亲征，途中为绕道家乡、保护自家庄稼瞎指挥，导致大军在土木堡被瓦剌全歼，自己死于乱军。他的死，洗不清二十万将士的冤。"><div class="n1">王振</div><div class="n2">土木堡祸首</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="也先" data-r="瓦剌首领 · 俘虏皇帝" data-d="瓦剌太师，土木堡之变俘获明英宗。本想拿皇帝换钱换地，北京保卫战战败后，这个'人质'成了烫手山芋，被杨善一番话说得放人。后来也先自己也在瓦剌内乱中被杀。"><div class="n1">也先</div><div class="n2">瓦剌首领</div></div>
+<div class="pn" style="background:#F0F6FC;border-color:#3A6EA5" data-n="杨善" data-r="外交官 · 以口舌定国" data-d="土木堡之变后，朝廷上下没人敢去瓦剌。杨善空手出使，凭三寸不烂之舌说服也先放回太上皇，不费一兵一卒、一金一帛，史称'以口舌定国'。可惜他的功劳越大，越衬托得朱祁钰兄弟的尴尬。"><div class="n1">杨善</div><div class="n2">以口舌定国</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="徐有贞" data-r="夺门主谋 · '意欲'之狱" data-d="原名徐珵，土木堡之变时主张南迁，被于谦当众怒斥，怀恨在心。改名徐有贞后投靠石亨，策划夺门之变。复辟后进谗'不杀于谦，此举为无名'，制造'意欲'之狱害死于谦。后因专权被流放。"><div class="n1">徐有贞</div><div class="n2">夺门主谋</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="石亨" data-r="武将 · 夺门主谋" data-d="北京保卫战功臣，因战功骄横。见景泰帝病重、新君未定，怕失势，与徐有贞、曹吉祥合谋迎立太上皇复辟。事成后大权在握、结党营私，最后因谋反罪被下狱，死于狱中。"><div class="n1">石亨</div><div class="n2">夺门主谋</div></div>
+<div class="pn" style="background:#FBEEEA;border-color:#E0A79D" data-n="曹吉祥" data-r="太监 · 夺门主谋" data-d="与石亨、徐有贞策划夺门之变，迎太上皇复辟，成为第二个'王振'，权倾朝野。后来甚至学王振怂恿皇帝亲征，失败后狗急跳墙，发动政变，事败被凌迟处死。夺门三人组，没一个有好下场。"><div class="n1">曹吉祥</div><div class="n2">夺门主谋</div></div>
+<div class="pn" style="background:#F0F6FC;border-color:#3A6EA5" data-n="钱皇后" data-r="明英宗皇后 · 患难与共" data-d="朱祁镇的皇后。土木堡之变后为迎回丈夫，日夜啼哭祈祷，哭瞎一只眼、摔瘸一条腿。朱祁镇软禁南宫七年，她靠做针线活卖钱贴补家用。朱祁镇临终遗言：钱皇后与我同葬。是这段帝王争斗里少有的温情。"><div class="n1">钱皇后</div><div class="n2">患难与共</div></div>
+<div class="pn" style="background:#F0F6FC;border-color:#3A6EA5" data-n="朱见深" data-r="成化帝 · 被废又复立" data-d="朱祁镇长子。2岁被立为太子，5岁被叔叔朱祁钰废掉，度过提心吊胆的童年。夺门之变后重新被立为太子，继位成化帝。上台第一件事就是为于谦平反。他承认父亲杀了于谦，但他挽回了这个错误。"><div class="n1">朱见深</div><div class="n2">成化帝</div></div>
+<div class="pn" style="background:#FAFAFA;border-color:#C9C2B8" data-n="朱见济" data-r="景泰太子 · 早夭" data-d="朱祁钰独子。朱祁钰为传位给他，废了侄子朱见深的太子位，引发朝局动荡。结果朱见济5岁夭折，朱祁钰绝后却不再立太子，直接为夺门之变埋下伏笔。一个早夭的孩子，改变了历史走向。"><div class="n1">朱见济</div><div class="n2">早夭太子</div></div>
+</div>
+<div class="panel" id="panel"><h4>👆 点上面任意一个人</h4><p>这里会显示：他是谁、在这场大戏里扮演什么角色。</p></div>
+</section>
+
+<!-- 10. 小测验 -->
+<section>
+<div class="h2"><span class="n">10</span>考考你</div>
+<div class="h2sub">点选项，自动判对错</div>
+<div class="q"><div class="qt">1. 土木堡之变发生在哪一年？</div><div class="as">
+<button class="a">1449年</button><button class="a">1402年</button><button class="a">1457年</button></div>
+<div class="exp">✅ 1449年（正统十四年）。这一年，朱祁镇在土木堡被瓦剌俘虏，明朝由盛转衰。</div></div>
+<div class="q"><div class="qt">2. 谁怂恿明英宗御驾亲征，又在撤退路上瞎指挥？</div><div class="as">
+<button class="a">于谦</button><button class="a">王振</button><button class="a">杨善</button></div>
+<div class="exp">✅ 王振。这个太监为了"建功立业"怂恿皇帝亲征，回程又为绕道老家、保护庄稼耽误时间，导致大军覆灭。</div></div>
+<div class="q"><div class="qt">3. "社稷为重，君为轻"，说的是皇帝被俘时，该怎么办？</div><div class="as">
+<button class="a">开城投降，把皇帝接回来</button><button class="a">不能为迎回皇帝而丢了城池和国家</button><button class="a">马上迁都南京</button></div>
+<div class="exp">✅ 城在，国在，才有谈的资本。也先押着朱祁镇叫门，守将们就是这个态度——不开城。这是北京保卫战能赢的思想根基。</div></div>
+<div class="q"><div class="qt">4. 朱祁钰是被谁"架"上皇位的？</div><div class="as">
+<button class="a">王振</button><button class="a">也先</button><button class="a">于谦和满朝文武</button></div>
+<div class="exp">✅ 国不可一日无君。于谦力主"立郕王为帝"，百官跪请，朱祁钰半推半就被送上了皇位。这皇帝，真没人想当。</div></div>
+<div class="q"><div class="qt">5. "瓦剌留学生"（朱祁镇）被放回来后，被软禁在哪里？</div><div class="as">
+<button class="a">南宫</button><button class="a">乾清宫</button><button class="a">行在（陪都南京）</button></div>
+<div class="exp">✅ 南宫，今北京南池子一带。朱祁钰怕哥哥东山再起，砍树、灌锁、克扣用度，朱祁镇和钱皇后靠做针线活度日，一住七年。</div></div>
+<div class="q"><div class="qt">6. 夺门之变中，谁把朱祁镇从南宫抬出来复辟？</div><div class="as">
+<button class="a">于谦</button><button class="a">石亨、徐有贞、曹吉祥</button><button class="a">杨善</button></div>
+<div class="exp">✅ 石亨（武将）、徐有贞（文臣）、曹吉祥（太监），三个野心家一拍即合，一夜之间换了皇帝。</div></div>
+<div class="q"><div class="qt">7. 于谦被杀的罪名，被后人称为？</div><div class="as">
+<button class="a">通敌之罪</button><button class="a">"意欲"之狱（因为"想"就定罪）</button><button class="a">谋反之罪（有实据）</button></div>
+<div class="exp">✅ "意欲"之狱。没有行动、没有证据，只凭"你心里想"就定罪——徐有贞一句"不杀于谦，此举为无名"，让于谦死在了荒谬的罪名下。</div></div>
+<div class="q"><div class="qt">8. 谁给于谦平了反？</div><div class="as">
+<button class="a">朱祁镇</button><button class="a">朱祁钰</button><button class="a">朱见深（成化帝）</button></div>
+<div class="exp">✅ 朱见深。这位被废过的太子登基后，第一件事就是给于谦平反、追谥"忠肃"。他说：于谦有再造之功。</div></div>
+</section>
+
+</div>
+
+<footer>土木堡之变 · 大明人物关系图 · <a href="./index.html">返回首页</a></footer>
+
+<script>
+// 人物卡点选
+var pns=document.querySelectorAll('.pn'),panel=document.getElementById('panel');
+pns.forEach(function(p){
+  p.addEventListener('click',function(){
+    pns.forEach(function(x){x.classList.remove('on')});
+    p.classList.add('on');
+    panel.innerHTML='<h4>'+p.dataset.n+'</h4><div class="role">'+p.dataset.r+'</div><p>'+p.dataset.d+'</p>';
+  });
+});
+// 小测验
+document.querySelectorAll('.q').forEach(function(q){
+  var as=q.querySelectorAll('.a');
+  var exp=q.querySelector('.exp');
+  var done=false;
+  as.forEach(function(a,i){
+    a.addEventListener('click',function(){
+      if(done)return;done=true;
+      var isOk=(i===0);
+      as.forEach(function(x){x.classList.add('dis');if(x.classList.contains('ok'))x.classList.remove('ok')});
+      a.classList.add(isOk?'ok':'no');
+      if(isOk){
+        exp.innerHTML='✅ 答对了！'+exp.textContent;
+        exp.classList.add('show');
+      }else{
+        a.textContent='✗ '+a.textContent;
+        exp.innerHTML='❌ 答错了。正确答案是第一个选项。<br>'+exp.textContent;
+        exp.classList.add('show');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
